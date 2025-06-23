@@ -1,4 +1,10 @@
 import Image from 'next/image'
+import image1 from '@/images/image1.png'
+import image2 from '@/images/image2.png'
+import image3 from '@/images/image3.png'
+import image4 from '@/images/image4.png'
+import image5 from '@/images/image5.png'
+import image6 from '@/images/image6.png'
 
 export default function HowWeHelp() {
   const services = [
@@ -8,7 +14,7 @@ export default function HowWeHelp() {
       emoji: '💪',
       bgColor: 'bg-red-100',
       textColor: 'text-red-600',
-      image: '/api/placeholder/400/300',
+      image: image1,
     },
     {
       title: 'Capacitação',
@@ -17,7 +23,7 @@ export default function HowWeHelp() {
       emoji: '🎓',
       bgColor: 'bg-blue-100',
       textColor: 'text-blue-600',
-      image: '/api/placeholder/400/300',
+      image: image2,
     },
     {
       title: 'Ações socias',
@@ -26,7 +32,7 @@ export default function HowWeHelp() {
       emoji: '🤝',
       bgColor: 'bg-green-100',
       textColor: 'text-green-600',
-      image: '/api/placeholder/400/300',
+      image: image3,
     },
     {
       title: 'Cursos, workshops e palestras',
@@ -34,7 +40,7 @@ export default function HowWeHelp() {
       emoji: '📚',
       bgColor: 'bg-purple-100',
       textColor: 'text-purple-600',
-      image: '/api/placeholder/400/300',
+      image: image4,
     },
     {
       title: 'Educação inclusiva',
@@ -43,7 +49,7 @@ export default function HowWeHelp() {
       emoji: '🌟',
       bgColor: 'bg-yellow-100',
       textColor: 'text-yellow-600',
-      image: '/api/placeholder/400/300',
+      image: image5,
     },
     {
       title: 'Pesquisa',
@@ -52,7 +58,7 @@ export default function HowWeHelp() {
       emoji: '🔬',
       bgColor: 'bg-cyan-100',
       textColor: 'text-cyan-600',
-      image: '/api/placeholder/400/300',
+      image: image6,
     },
   ]
 
