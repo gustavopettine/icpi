@@ -10,15 +10,13 @@ export default function Navbar() {
   }
 
   const handleMobileItemClick = () => {
-    setIsMenuOpen(false) // Fecha o menu mobile ao clicar
+    setIsMenuOpen(false)
   }
 
   return (
     <nav className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-4 relative">
-      {/* Logo */}
       <h1 className="text-xl font-bold text-zinc-950">Logo</h1>
 
-      {/* Menu Desktop */}
       <div className="hidden lg:block">
         <ul className="flex gap-8 xl:gap-16">
           {['Sobre', 'Segmento', 'Impacto Social', 'Contato'].map((item) => (
@@ -27,19 +25,16 @@ export default function Navbar() {
               className="relative text-zinc-600 hover:text-zinc-950 cursor-pointer transition-colors duration-300 py-1 group"
             >
               {item}
-              {/* Linha aparece apenas no hover */}
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-yellow-500 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-300"></div>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Botão Doação Desktop */}
-      <button className="hidden lg:block cursor-pointer bg-red-400 hover:bg-red-500 text-zinc-50 py-2.5 px-3.5 rounded-xl font-bold shadow-md transition-colors duration-300">
+      <button className="hidden lg:block cursor-pointer bg-red-400 hover:bg-red-500 text-zinc-50 py-3 px-4 rounded-xl font-bold shadow-md transition-colors duration-300">
         Faça uma doação
       </button>
 
-      {/* Botão Menu Hambúrguer Mobile */}
       <button
         onClick={toggleMenu}
         className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
@@ -62,7 +57,6 @@ export default function Navbar() {
         ></span>
       </button>
 
-      {/* Menu Mobile */}
       <div
         className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-zinc-100 transition-all duration-300 ${
           isMenuOpen
@@ -85,7 +79,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Botão Doação Mobile */}
           <button className="w-full cursor-pointer bg-red-400 hover:bg-red-500 text-zinc-50 py-3 px-4 rounded-xl font-bold shadow-md transition-colors duration-300">
             Faça uma doação
           </button>
