@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 type NavItem =
   | { label: string; route: string; isRoute: true }
@@ -10,12 +11,14 @@ type NavItem =
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const router = useRouter()
+
   const navItems: NavItem[] = [
     { label: 'Início', route: '/', isRoute: true },
     { label: 'Sobre', targetId: 'sobre', isRoute: false },
     { label: 'Como ajudamos', targetId: 'como-ajudamos', isRoute: false },
     { label: 'Fale conosco', targetId: 'fale-conosco', isRoute: false },
-    { label: 'Projetos', route: '/projects', isRoute: true },
+    { label: 'Projetos', route: '/projetos', isRoute: true },
   ]
 
   const toggleMenu = () => {
@@ -24,6 +27,10 @@ export default function Navbar() {
 
   const handleMobileItemClick = () => {
     setIsMenuOpen(false)
+  }
+
+  const handleScrollLinkClick = (targetId: string) => {
+    router.push(`/#${targetId}`)
   }
 
   return (
@@ -42,7 +49,9 @@ export default function Navbar() {
               {item.isRoute ? (
                 <Link href={item.route}>{item.label}</Link>
               ) : (
-                <a href={`#${item.targetId}`}>{item.label}</a>
+                <span onClick={() => handleScrollLinkClick(item.targetId)}>
+                  {item.label}
+                </span>
               )}
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-yellow-500 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-300"></div>
             </li>
@@ -88,7 +97,12 @@ export default function Navbar() {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                onClick={handleMobileItemClick}
+                onClick={() => {
+                  handleMobileItemClick()
+                  if (!item.isRoute) {
+                    handleScrollLinkClick(item.targetId)
+                  }
+                }}
                 className={`cursor-pointer transition-colors duration-300 py-2 text-zinc-600 hover:text-zinc-950 ${
                   item.label !== 'Projetos' ? 'border-b border-zinc-100' : ''
                 }`}
@@ -96,7 +110,7 @@ export default function Navbar() {
                 {item.isRoute ? (
                   <Link href={item.route}>{item.label}</Link>
                 ) : (
-                  <a href={`#${item.targetId}`}>{item.label}</a>
+                  <span>{item.label}</span>
                 )}
               </li>
             ))}
