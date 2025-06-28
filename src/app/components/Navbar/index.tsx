@@ -1,5 +1,8 @@
 'use client'
 
+import Image from 'next/image'
+import logo from '@/images/logo.png'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -35,9 +38,9 @@ export default function Navbar() {
 
   return (
     <nav className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-4 relative z-40">
-      <h1 className="text-xl font-bold text-zinc-950">
-        <Link href={'/'}>Logo</Link>
-      </h1>
+      <Link href={'/'}>
+        <Image src={logo} alt="Logo" width={64} height={64} />
+      </Link>
 
       <div className="hidden lg:block">
         <ul className="flex gap-8 xl:gap-16">
