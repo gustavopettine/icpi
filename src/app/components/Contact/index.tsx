@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div id="fale-conosco" className="max-w-7xl mx-auto">
         <div className="hidden lg:flex flex-col">
           <div className="flex-shrink-0 w-96 space-y-6">
             <h1 className="text-4xl font-bold text-zinc-950 mb-2">

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div id="sobre" className="max-w-7xl mx-auto">
       <div className="hidden lg:flex justify-between gap-20 items-start">
         <div className="flex-shrink-0 w-96 space-y-6">
           <h1 className="text-4xl font-bold text-zinc-950 mb-2">Sobre</h1>
