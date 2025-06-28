@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Facebook, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,20 +8,22 @@ export default function Footer() {
           <div className="flex items-center space-x-4">
             <span className="text-zinc-600 text-sm mr-2">Siga-nos:</span>
             <a
-              href="#"
+              href="https://www.facebook.com/people/Instituto-Conhecer-para-Incluir/61550520780080/?_rdr"
+              target="_blank"
               className="text-zinc-600 hover:text-red-500 transition-colors duration-200"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/institutoconhecerparaincluir"
+              target="_blank"
               className="text-zinc-600 hover:text-red-500 transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a
+            {/* <a
               href="#"
               className="text-zinc-600 hover:text-red-500 transition-colors duration-200"
               aria-label="LinkedIn"
@@ -34,7 +36,7 @@ export default function Footer() {
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
-            </a>
+            </a> */}
           </div>
 
           <div className="text-center lg:text-right">
