@@ -6,7 +6,7 @@ import Contact from './components/Contact'
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
-      <div className="max-w-7xl mx-auto px-6 py-16 w-full flex flex-col gap-24">
+      <div className="max-w-7xl mx-auto px-6 py-16 w-full flex flex-col gap-16">
         <HeroImage />
 
         <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto">
